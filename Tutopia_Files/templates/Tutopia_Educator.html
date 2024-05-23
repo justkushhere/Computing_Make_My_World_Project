@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Form</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename = 'Lelogo.ico')}}">
+</head>
+<body>
+    
+    <section class = "home">
+        
+        
+
+        <img src="{{url_for('static',filename='mount2.png')}}" class="mount2">
+        <img src="{{url_for('static',filename='mount1.png')}}" class="mount1">
+        <img src="{{url_for('static',filename='bush2.png')}}../../Tutopia_Files/assets/bush2.png" class="bush2">
+
+        <h1 class = "hedu">Tutor Application Form</h1>
+        <div class = "edumain">
+            <form action="/submit" method="post" class = "login-box">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required class = "search_box" placeholder="Please Enter Your Name"><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required class = "search_box" placeholder="Please Enter Your Email"><br><br>
+
+                <label for="subject">Subject:</label><br>
+                <input type="text" id="subject" name="subject" required class = "search_box" placeholder="Please Enter The Subject"><br><br>
+
+                <label for="experience">Experience (years):</label><br>
+                <input type="number" id="experience" name="experience" required class = "search_box" placeholder="Please Enter Your Experience"><br><br>
+                <input type="submit" value="Submit" class  = "submit">
+            </form>     
+            
+        </div>
+
+
+        <img src="{{url_for('static',filename='bush1.png')}}" class="bush1">
+        <img src="{{url_for('static',filename='leaf2.png')}}" class="leaf2">
+        <img src="{{url_for('static',filename='leaf1.png')}}" class="leaf1">
+
+    </section>
+
+
+    
+            
+</body>
+</html>

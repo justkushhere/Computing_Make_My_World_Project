@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutopia</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename = 'Lelogo.ico')}}">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to</h1>
+        <nav>
+            <a href = "{{url_for('student')}}" class = "active">Student</a>
+            <a href="{{url_for('educator')}}">Educator</a>
+            
+
+        </nav>
+    </header>
+
+    <section class="home">
+        <img src="{{url_for('static',filename='mount2.png')}}" class="mount2">
+        <img src="{{url_for('static',filename='mount1.png')}}" class="mount1">
+        <img src="{{url_for('static',filename='bush2.png')}}../../Tutopia_Files/assets/bush2.png" class="bush2">
+
+        <h1 class="title">Tutopia</h1>
+
+        <img src="{{url_for('static',filename='bush1.png')}}" class="bush1">
+        <img src="{{url_for('static',filename='leaf2.png')}}" class="leaf2">
+        <img src="{{url_for('static',filename='leaf1.png')}}" class="leaf1">
+    </section>
+
+    <section class="about">
+        <h1>About Us</h1>
+        <br>
+        <p>Tutopia is Singapore’s #1 leading education hub, established by a group of ambitious educators who aspire to shape Singapore's education landscape.  By offering a wide range of private lessons from academic tuition to music, sports, and arts, we believe to be inclusive by providing holistic services that your child can benefit from. </p>
+        <br>
+        <p>As for all you educators out there. this is the perfect platform for you too. We support a huge variety of subjects, most of which can be taught digitally.Being teachers ourselves, we deeply understand your needs and are dedicated to finding you students with ease.</p>
+        <br>
+        <h4>Do join us and be part of the Tutopia Family!</h4>
+    </section>
+
+    <script src="{{url_for('static',filename='script.js')}}"></script>
+
+</body>
+</html>

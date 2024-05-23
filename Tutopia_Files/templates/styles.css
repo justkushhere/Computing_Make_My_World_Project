@@ -1,0 +1,11 @@
+.Nav_Bar{
+    padding-left: 20%;
+    justify-items: center;
+    background-color: rgba(173, 216, 230, 0.898);
+}
+.Tutopia_Title{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+body{
+    background-color: black;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutopia</title>
+        <link rel = "stylesheet" href = "{{url_for('static',filename='style.css')}}" >
+        <link rel="icon" type="image/x-icon" href="{{url_for('static',filename = 'Lelogo.ico')}}">
+    </head>
+    <body class = "home">
+
+        <header>
+            <h1 class = "hstudent">Browse Through Our Extensive List Of Educators</h1>
+            
+        </header>
+        <section>
+            <img src="{{url_for('static',filename='mount2.png')}}" class="mount2">
+            <img src="{{url_for('static',filename='mount1.png')}}" class="mount1">
+            <img src="{{url_for('static',filename='bush2.png')}}../../Tutopia_Files/assets/bush2.png" class="bush2">
+    
+            <div class = "studmain">
+                <div class = "student-box">
+                    <nav>                   
+                        <table>
+                            <tbody>
+                                <td>
+                                    <a href = "{{url_for('student_SORT_Exp')}}">
+                                        <button class = "nav_btn">Sort By Experience</button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href = "{{url_for('student_GRPBY_SBJ')}}">
+                                        <button class = "nav_btn">Group By Subject</button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <form action="{{url_for('student_SEARCH_process')}}" method="post">
+                                        <input type="text" name="search_query" placeholder="Search By Subject, Name, or Email" class = "search_box">
+                                        <button type="submit" class = "nav_btn">Search</button>
+                                    </form>
+                                </td>
+                            </tbody>
+                        </table>
+                    </nav>
+
+                
+                    <table  width = 600px>
+                        <thead>
+                            <td class = "td">
+                                <b>Name</b>
+                            </td>
+                            <td class = "td">
+                                <b>Email</b>
+                            </td>
+                            <td class = "td">
+                                <b>Subject</b>
+                            </td>
+                            <td class = "td">
+                                <b>Experience</b>
+                            </td>
+                        </thead>
+                        <tbody>
+                            {% for tutor in Tutors %}
+                            <tr>
+                                <td>
+                                    {{tutor[0]}}
+                                </td>
+                                <td>
+                                    <button onclick="composeEmail('{{ tutor[1] }}', '{{ tutor[2] }}', '{{ tutor[0] }}')">{{tutor[1]}}</button>
+                                
+                                </td>
+                                <td>
+                                    {{tutor[2]}}
+                                </td>
+                                <td>
+                                    {{tutor[3]}}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        <script>
+                            function composeEmail(emailAddress, topic, name) {
+                                
+                                // Replace 'Subject' with the desired subject line
+                                var subject = 'Request for mentorship in ' + topic;
+                                // Replace 'Body' with the desired email body
+                                var body = "Dear Mr/Mrs " + name + ",";
+                
+                                // Construct the mailto: URL
+                                var mailtoUrl = 'mailto:' + encodeURIComponent(emailAddress) +
+                                                '?subject=' + encodeURIComponent(subject) +
+                                                '&body=' + encodeURIComponent(body);
+                
+                                // Open the default email client with the pre-filled email
+                                window.location.href = mailtoUrl;
+                            }
+                        </script>
+                    </table>
+                </div>
+            </div>
+    
+            <img src="{{url_for('static',filename='bush1.png')}}" class="bush1">
+            <img src="{{url_for('static',filename='leaf2.png')}}" class="leaf2">
+            <img src="{{url_for('static',filename='leaf1.png')}}" class="leaf1">
+        </section>
+        
+        
+    </body>
+</html>
